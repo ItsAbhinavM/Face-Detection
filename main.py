@@ -22,7 +22,7 @@ def imageDetector():
 
 def detectBox(vid):
     grayImage=cv2.cvtColor(vid,cv2.COLOR_BGR2GRAY)
-    faces=faceClassifier.detectMultiScale(grayImage, scaleFactor=2, minNeighbors=0, minSize=(10, 10))
+    faces=faceClassifier.detectMultiScale(grayImage, scaleFactor=1.3, minNeighbors=5, minSize=(10, 10))
     for (x,y,w,h) in faces :
         cv2.rectangle(vid,(x,y),(x+w,y+h),(0,255,0),1)
     return faces
